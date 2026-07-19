@@ -10,6 +10,8 @@
   <a href="mailto:djenis.ejupi@ejupilabs.com">Email</a>
 </p>
 
+<p align="center"><sub>Switzerland · English / Italian / Albanian</sub></p>
+
 I build software in Switzerland. My work sits between backend engineering, applied AI, automation and product design. I care about the unglamorous parts too: clear boundaries, useful tests, safe defaults and interfaces people can understand without a manual.
 
 ### Selected work
