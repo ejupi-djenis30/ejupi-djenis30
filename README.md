@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://ejupilabs.com">Portfolio</a> ·
   <a href="https://www.linkedin.com/in/djenis-ejupi">LinkedIn</a> ·
-  <a href="mailto:djenis.ejupi@ejupilabs.com">Email</a>
+  <a href="mailto:info@ejupilabs.com">Email</a>
 </p>
 
 <p align="center"><sub>Switzerland · English / Italian / Albanian</sub></p>
