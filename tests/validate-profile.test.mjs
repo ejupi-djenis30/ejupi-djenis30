@@ -146,5 +146,5 @@ test("validates the checked-in profile without network access", async () => {
 
   assert.ok(result.destinationCount >= 10);
   assert.ok(result.localDestinationCount >= 6);
-  assert.ok(result.svgCount >= 6);
+  assert.equal(result.svgCount, 6);
 });

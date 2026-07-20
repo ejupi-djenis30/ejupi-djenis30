@@ -555,6 +555,7 @@ export async function validateProfile(root = repositoryRoot) {
   const destinations = extractDestinations(readme);
   assert.ok(destinations.length > 0, "README.md contains no links or images.");
   let localDestinationCount = 0;
+  const referencedLocalFiles = new Set();
   for (const destination of destinations) {
     if (destination.startsWith("#")) continue;
     if (/^[a-z][a-z0-9+.-]*:/iu.test(destination)) {
@@ -562,7 +563,7 @@ export async function validateProfile(root = repositoryRoot) {
       continue;
     }
 
-    await resolveExistingLocalDestination(canonicalRoot, destination);
+    referencedLocalFiles.add(await resolveExistingLocalDestination(canonicalRoot, destination));
     localDestinationCount += 1;
   }
 
@@ -570,7 +571,12 @@ export async function validateProfile(root = repositoryRoot) {
   const svgFiles = (await readdir(assetDirectory)).filter((name) => name.toLowerCase().endsWith(".svg")).sort();
   assert.ok(svgFiles.length > 0, "The assets directory contains no SVG files.");
   for (const name of svgFiles) {
-    validateSvg(await readFile(resolve(assetDirectory, name), "utf8"), `assets/${name}`);
+    const assetPath = resolve(assetDirectory, name);
+    assert.ok(
+      referencedLocalFiles.has(await realpath(assetPath)),
+      `assets/${name} is not referenced by README.md. Remove obsolete profile assets.`,
+    );
+    validateSvg(await readFile(assetPath, "utf8"), `assets/${name}`);
   }
 
   return { destinationCount: destinations.length, localDestinationCount, svgCount: svgFiles.length };
