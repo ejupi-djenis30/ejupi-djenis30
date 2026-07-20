@@ -9,9 +9,24 @@ import {
   repositoryRoot,
   resolveExistingLocalDestination,
   resolveLocalDestination,
+  validateLicense,
   validateProfile,
   validateSvg,
 } from "../scripts/validate-profile.mjs";
+
+test("requires the canonical MIT license with collective attribution", () => {
+  const license = [
+    "MIT License",
+    "",
+    "Copyright (c) 2026 Ejupi Labs and project contributors",
+    "",
+    "Permission is hereby granted, free of charge, to any person obtaining a copy",
+    'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND',
+  ].join("\n");
+
+  validateLicense(license);
+  assert.throws(() => validateLicense("MIT License\n"), /copyright notice/u);
+});
 
 test("extracts Markdown and HTML destinations without duplicates", () => {
   const source = '[Project](docs/project.md)\n<a href="https://example.com"><img src="assets/card.svg" alt="Card" /></a>\n![Card](assets/card.svg)';
@@ -153,6 +168,7 @@ test("rejects an SVG asset that the profile does not use", async (context) => {
   const temporaryRoot = await mkdtemp(join(tmpdir(), "profile-orphan-"));
   context.after(() => rm(temporaryRoot, { force: true, recursive: true }));
   await cp(join(repositoryRoot, "README.md"), join(temporaryRoot, "README.md"));
+  await cp(join(repositoryRoot, "LICENSE"), join(temporaryRoot, "LICENSE"));
   await cp(join(repositoryRoot, "assets"), join(temporaryRoot, "assets"), { recursive: true });
   await writeFile(
     join(temporaryRoot, "assets", "orphan.svg"),

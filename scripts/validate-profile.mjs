@@ -39,6 +39,25 @@ const safeSvgAttributes = new Set([
   "y",
 ]);
 
+export function validateLicense(source) {
+  assert.match(source, /^MIT License\r?\n/u, "LICENSE must use the MIT license.");
+  assert.match(
+    source,
+    /Copyright \(c\) \d{4} Ejupi Labs and project contributors/u,
+    "LICENSE must retain the collective copyright notice.",
+  );
+  assert.match(
+    source,
+    /Permission is hereby granted, free of charge, to any person obtaining a copy/u,
+    "LICENSE is missing the MIT permission grant.",
+  );
+  assert.match(
+    source,
+    /THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND/u,
+    "LICENSE is missing the MIT warranty disclaimer.",
+  );
+}
+
 function blankExceptNewlines(value) {
   return value.replace(/[^\r\n]/gu, " ");
 }
@@ -539,6 +558,7 @@ function validateRemoteDestination(destination) {
 
 export async function validateProfile(root = repositoryRoot) {
   const canonicalRoot = await realpath(root);
+  validateLicense(await readFile(resolve(canonicalRoot, "LICENSE"), "utf8"));
   const readmePath = resolve(canonicalRoot, "README.md");
   const readme = await readFile(readmePath, "utf8");
 
