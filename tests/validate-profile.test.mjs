@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdir, mkdtemp, realpath, rm, symlink, writeFile } from "node:fs/promises";
+import { cp, mkdir, mkdtemp, realpath, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import test from "node:test";
@@ -147,4 +147,17 @@ test("validates the checked-in profile without network access", async () => {
   assert.ok(result.destinationCount >= 10);
   assert.ok(result.localDestinationCount >= 6);
   assert.equal(result.svgCount, 6);
+});
+
+test("rejects an SVG asset that the profile does not use", async (context) => {
+  const temporaryRoot = await mkdtemp(join(tmpdir(), "profile-orphan-"));
+  context.after(() => rm(temporaryRoot, { force: true, recursive: true }));
+  await cp(join(repositoryRoot, "README.md"), join(temporaryRoot, "README.md"));
+  await cp(join(repositoryRoot, "assets"), join(temporaryRoot, "assets"), { recursive: true });
+  await writeFile(
+    join(temporaryRoot, "assets", "orphan.svg"),
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" role="img" aria-labelledby="title"><title id="title">Orphan</title><rect width="10" height="10" fill="#fff"/></svg>',
+  );
+
+  await assert.rejects(validateProfile(temporaryRoot), /not referenced by README\.md/u);
 });
