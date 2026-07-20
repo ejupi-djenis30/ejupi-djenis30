@@ -59,7 +59,7 @@ I choose tools after I understand the constraint. Sometimes that means a Rust co
 
 - I am currently tightening the boundary between powerful AI tooling and explicit user permission.
 - Public demos use synthetic fixtures when real data would be inappropriate.
-- Older collaborative projects keep their original contributors in the history and documentation.
+- Collaborative projects acknowledge shared work without publishing individual identities.
 
 <p align="center">
   <a href="https://ejupilabs.com"><strong>See the work at ejupilabs.com →</strong></a>
