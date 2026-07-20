@@ -38,9 +38,13 @@ I build software in Switzerland. My work sits between backend engineering, appli
     </td>
   </tr>
   <tr>
-    <td colspan="2">
+    <td width="50%">
       <a href="https://ejupi-djenis30.github.io/PsychologistRustBot/"><img src="assets/eliza-card.svg" width="100%" alt="ELIZA Lab project card" /></a>
       <br /><sub>A local dialogue experiment that shows the rule behind every reply.</sub>
+    </td>
+    <td width="50%">
+      <a href="https://ejupi-djenis30.github.io/vector-placement-operations/"><img src="assets/vector-card.svg" width="100%" alt="VECTOR placement operations project card" /></a>
+      <br /><sub>A clear, local operations board for an entire placement cohort.</sub>
     </td>
   </tr>
 </table>

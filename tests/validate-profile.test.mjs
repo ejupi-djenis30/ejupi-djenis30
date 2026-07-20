@@ -145,8 +145,8 @@ test("validates the checked-in profile without network access", async () => {
   const result = await validateProfile();
 
   assert.ok(result.destinationCount >= 10);
-  assert.ok(result.localDestinationCount >= 6);
-  assert.equal(result.svgCount, 6);
+  assert.ok(result.localDestinationCount >= 7);
+  assert.equal(result.svgCount, 7);
 });
 
 test("rejects an SVG asset that the profile does not use", async (context) => {
