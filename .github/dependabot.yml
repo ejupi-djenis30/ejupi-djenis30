@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Zurich
+    open-pull-requests-limit: 5
+    groups:
+      actions-maintenance:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
