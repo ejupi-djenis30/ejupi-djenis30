@@ -31,6 +31,7 @@ const safeSvgAttributes = new Set([
   "stroke-linecap",
   "stroke-linejoin",
   "stroke-width",
+  "text-anchor",
   "transform",
   "viewBox",
   "width",
@@ -562,7 +563,7 @@ export async function validateProfile(root = repositoryRoot) {
   const readmePath = resolve(canonicalRoot, "README.md");
   const readme = await readFile(readmePath, "utf8");
 
-  for (const section of ["### Selected work", "### The toolkit", "### Working notes"]) {
+  for (const section of ["### Systems you can run", "### The toolkit", "### Working notes"]) {
     assert.ok(readme.includes(section), `README.md is missing ${section}.`);
   }
 
