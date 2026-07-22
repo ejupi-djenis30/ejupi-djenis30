@@ -1,1 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" role="img" aria-labelledby="t"><title id="t">CareerOS Local</title><rect width="600" height="230" rx="18" fill="#101713"/><g opacity=".12" stroke="#b9fa7b"><path d="M0 46h600M0 92h600M0 138h600M0 184h600M60 0v230M120 0v230M180 0v230M240 0v230M300 0v230M360 0v230M420 0v230M480 0v230M540 0v230"/></g><text x="34" y="45" fill="#b9fa7b" font-family="monospace" font-size="14" letter-spacing="2">01 / LOCAL-FIRST</text><text x="34" y="117" fill="#f5f5ed" font-family="Arial" font-size="44" font-weight="800">CareerOS Local</text><text x="34" y="162" fill="#9da99f" font-family="Arial" font-size="19">Private career intelligence.</text><rect x="485" y="30" width="80" height="80" rx="20" fill="#b9fa7b"/><path d="m512 70 15 15 23-30" fill="none" stroke="#101713" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" role="img" aria-labelledby="title description">
+  <title id="title">CareerOS Local</title>
+  <desc id="description">A local-first career utility represented as verified records flowing into search, tasks and dossier outputs.</desc>
+  <rect width="600" height="230" rx="18" fill="#101713" />
+  <g opacity=".11" stroke="#b9fa7b">
+    <path d="M0 46h600M0 92h600M0 138h600M0 184h600" />
+    <path d="M60 0v230M120 0v230M180 0v230M240 0v230M300 0v230M360 0v230M420 0v230M480 0v230M540 0v230" />
+  </g>
+  <text x="34" y="45" fill="#b9fa7b" font-family="monospace" font-size="14" letter-spacing="2">01 / LOCAL-FIRST UTILITY</text>
+  <text x="34" y="112" fill="#f5f5ed" font-family="Arial, sans-serif" font-size="42" font-weight="800">CareerOS Local</text>
+  <text x="34" y="154" fill="#aeb8b0" font-family="Arial, sans-serif" font-size="18">Records → applications.</text>
+  <g transform="translate(365 35)" font-family="monospace" font-size="9" text-anchor="middle">
+    <rect x="26" y="0" width="150" height="55" rx="8" fill="#17211b" stroke="#b9fa7b" />
+    <text x="101" y="23" fill="#b9fa7b" letter-spacing="1">VERIFIED RECORDS</text>
+    <text x="101" y="40" fill="#f5f5ed">LOCAL / REVISIONED</text>
+    <path d="M101 55v27M31 82h140" fill="none" stroke="#b9fa7b" />
+    <path d="M31 82v17M101 82v17M171 82v17" fill="none" stroke="#b9fa7b" />
+    <g transform="translate(0 99)">
+      <rect width="62" height="52" rx="7" fill="#b9fa7b" />
+      <rect x="70" width="62" height="52" rx="7" fill="#17211b" stroke="#b9fa7b" />
+      <rect x="140" width="62" height="52" rx="7" fill="#b9fa7b" />
+      <text x="31" y="24" fill="#101713">SEARCH</text>
+      <text x="31" y="37" fill="#101713">PLAN</text>
+      <text x="101" y="24" fill="#f5f5ed">TASKS</text>
+      <text x="101" y="37" fill="#f5f5ed">+ ICS</text>
+      <text x="171" y="24" fill="#101713">DOSSIER</text>
+      <text x="171" y="37" fill="#101713">ZIP</text>
+    </g>
+  </g>
+</svg>
