@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" role="img" aria-labelledby="title description">
+  <title id="title">ELIZA Lab v1.4.0</title>
+  <desc id="description">An open-set machine learning lab using seven deterministic transformations across 70 frozen inputs, evaluating 490 variants, with explicitly published limitations.</desc>
+  <rect width="600" height="230" rx="18" fill="#f4f1ea" />
+  <g opacity=".08" stroke="#0e1111">
+    <path d="M0 46h600M0 92h600M0 138h600M0 184h600" />
+    <path d="M60 0v230M120 0v230M180 0v230M240 0v230M300 0v230M360 0v230M420 0v230M480 0v230M540 0v230" />
+  </g>
+
+  <text x="34" y="40" fill="#b44a2a" font-family="monospace" font-size="13" letter-spacing="2">02 / OPEN-SET ML</text>
+  <text x="34" y="94" fill="#0e1111" font-family="Arial, sans-serif" font-size="40" font-weight="800">ELIZA Lab</text>
+  <text x="34" y="128" fill="#5a5d5a" font-family="monospace" font-size="12" letter-spacing="1">FROZEN ROBUSTNESS AUDIT</text>
+  <text x="34" y="151" fill="#5a5d5a" font-family="monospace" font-size="12" letter-spacing="1">CONSISTENCY ≠ CORRECTNESS</text>
+  <rect x="34" y="172" width="188" height="30" rx="6" fill="#b44a2a" />
+  <text x="128" y="192" fill="#f4f1ea" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">LIMITS PUBLISHED</text>
+
+  <rect x="354" y="38" width="212" height="164" rx="12" fill="#e7e1d7" stroke="#0e1111" />
+  <text x="460" y="59" fill="#5a5d5a" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="1">POST-TRAINING / FROZEN</text>
+  <path d="M460 74v75" stroke="#0e1111" opacity=".28" />
+  <text x="405" y="111" fill="#0e1111" font-family="Arial, sans-serif" font-size="42" font-weight="800" text-anchor="middle">70</text>
+  <text x="515" y="111" fill="#b44a2a" font-family="Arial, sans-serif" font-size="42" font-weight="800" text-anchor="middle">490</text>
+  <text x="405" y="130" fill="#5a5d5a" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="1">INPUTS</text>
+  <text x="515" y="130" fill="#5a5d5a" font-family="monospace" font-size="8" text-anchor="middle" letter-spacing="1">VARIANTS</text>
+
+  <rect x="369" y="151" width="20" height="12" rx="3" fill="#b44a2a" />
+  <rect x="396" y="151" width="20" height="12" rx="3" fill="#0e1111" />
+  <rect x="423" y="151" width="20" height="12" rx="3" fill="#b44a2a" />
+  <rect x="450" y="151" width="20" height="12" rx="3" fill="#0e1111" />
+  <rect x="477" y="151" width="20" height="12" rx="3" fill="#b44a2a" />
+  <rect x="504" y="151" width="20" height="12" rx="3" fill="#0e1111" />
+  <rect x="531" y="151" width="20" height="12" rx="3" fill="#b44a2a" />
+  <text x="460" y="186" fill="#5a5d5a" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="1">7 CONTROLLED TRANSFORMS</text>
+</svg>

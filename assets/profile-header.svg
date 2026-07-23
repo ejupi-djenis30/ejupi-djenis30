@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">Djenis Ejupi — software engineer and founder</title>
+  <desc id="desc">A dark editorial profile banner with connected system nodes and the words useful systems, carefully built.</desc>
+  <rect width="1280" height="360" rx="28" fill="#111312"/>
+  <g opacity=".12" stroke="#f2eee6"><path d="M0 72h1280M0 144h1280M0 216h1280M0 288h1280M128 0v360M256 0v360M384 0v360M512 0v360M640 0v360M768 0v360M896 0v360M1024 0v360M1152 0v360"/></g>
+  <circle cx="1032" cy="180" r="126" fill="none" stroke="#f06a42" stroke-width="2" opacity=".8"/>
+  <circle cx="1032" cy="180" r="76" fill="none" stroke="#f2eee6" opacity=".24"/>
+  <path d="M910 127 1032 180l111-92M1032 180l109 102" fill="none" stroke="#f2eee6" opacity=".45"/>
+  <circle cx="910" cy="127" r="10" fill="#f2eee6"/><circle cx="1032" cy="180" r="13" fill="#f06a42"/><circle cx="1143" cy="88" r="9" fill="#f2eee6"/><circle cx="1141" cy="282" r="9" fill="#f2eee6"/>
+  <text x="72" y="76" fill="#f06a42" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" letter-spacing="4">DJENIS EJUPI / SWITZERLAND</text>
+  <text x="72" y="168" fill="#f2eee6" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="800" letter-spacing="-3">Useful systems,</text>
+  <text x="72" y="240" fill="#f2eee6" font-family="Georgia,serif" font-size="72" font-style="italic">carefully built<tspan fill="#f06a42">.</tspan></text>
+  <text x="75" y="304" fill="#aaa9a3" font-family="monospace" font-size="17" letter-spacing="2">SOFTWARE ENGINEERING · APPLIED AI · AUTOMATION</text>
+</svg>
