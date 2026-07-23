@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { cp, mkdir, mkdtemp, realpath, rm, symlink, writeFile } from "node:fs/promises";
+import { cp, mkdir, mkdtemp, readFile, realpath, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import test from "node:test";
@@ -13,6 +13,47 @@ import {
   validateProfile,
   validateSvg,
 } from "../scripts/validate-profile.mjs";
+
+function parseAttributes(tag) {
+  return Object.fromEntries(
+    [...tag.matchAll(/([A-Za-z-]+)="([^"]*)"/gu)].map((match) => [match[1], match[2]]),
+  );
+}
+
+function assertTextFitsViewBox(source, label) {
+  const viewBox = source.match(/<svg\b[^>]*\bviewBox="([^"]+)"/u)?.[1]
+    .trim()
+    .split(/\s+/u)
+    .map(Number);
+  assert.equal(viewBox?.length, 4, `${label} needs a numeric four-value viewBox.`);
+  const [viewX, viewY, viewWidth, viewHeight] = viewBox;
+
+  for (const match of source.matchAll(/<text\b([^>]*)>([\s\S]*?)<\/text>/gu)) {
+    const attributes = parseAttributes(match[1]);
+    const x = Number(attributes.x);
+    const baseline = Number(attributes.y);
+    const fontSize = Number(attributes["font-size"]);
+    const letterSpacing = Number(attributes["letter-spacing"] ?? 0);
+    const textContent = match[2].match(/^([^<]*)(?:<tspan\b[^>]*>([^<]*)<\/tspan>)?$/u);
+    assert.ok(textContent, `${label} text bounds support plain text and one optional tspan.`);
+    const text = `${textContent[1]}${textContent[2] ?? ""}`.trim();
+    assert.ok(
+      [x, baseline, fontSize, letterSpacing].every(Number.isFinite),
+      `${label} text "${text}" needs numeric placement attributes.`,
+    );
+
+    const glyphWidth = fontSize * (attributes["font-family"]?.includes("monospace") ? 0.62 : 0.6);
+    const estimatedWidth = text.length * glyphWidth + Math.max(0, text.length - 1) * letterSpacing;
+    const anchor = attributes["text-anchor"] ?? "start";
+    const left = anchor === "middle" ? x - estimatedWidth / 2 : anchor === "end" ? x - estimatedWidth : x;
+    const right = left + estimatedWidth;
+
+    assert.ok(left >= viewX, `${label} text "${text}" crosses the left viewBox edge.`);
+    assert.ok(right <= viewX + viewWidth, `${label} text "${text}" crosses the right viewBox edge.`);
+    assert.ok(baseline - fontSize >= viewY, `${label} text "${text}" crosses the top viewBox edge.`);
+    assert.ok(baseline <= viewY + viewHeight, `${label} text "${text}" crosses the bottom viewBox edge.`);
+  }
+}
 
 test("requires the canonical MIT license with collective attribution", () => {
   const license = [
@@ -156,12 +197,63 @@ test("requires accessible metadata on the SVG root", () => {
   assert.throws(() => validateSvg(wrongLabel, "wrong-label.svg"), /reference its title/u);
 });
 
+test("keeps every SVG text block inside its viewBox", async () => {
+  const assetNames = [
+    "agent-card.svg",
+    "careeros-card.svg",
+    "dig-card.svg",
+    "eliza-card.svg",
+    "integra-card.svg",
+    "profile-header.svg",
+    "vector-card.svg",
+  ];
+
+  for (const name of assetNames) {
+    assertTextFitsViewBox(
+      await readFile(resolve(repositoryRoot, "assets", name), "utf8"),
+      `assets/${name}`,
+    );
+  }
+});
+
+test("keeps the CareerOS and ELIZA evidence diagrams centered and symmetric", async () => {
+  const career = await readFile(resolve(repositoryRoot, "assets", "careeros-card.svg"), "utf8");
+  const careerPanel = career.match(/<rect x="354" y="38" width="212" height="164"/u);
+  assert.ok(careerPanel, "CareerOS needs the 212-unit evidence panel.");
+  const careerPanelCenter = 354 + 212 / 2;
+  const careerColumnCenters = [372 + 68 / 2, 480 + 68 / 2];
+  assert.equal((careerColumnCenters[0] + careerColumnCenters[1]) / 2, careerPanelCenter);
+  assert.match(career, /<rect x="372" y="76" width="68" height="38"/u);
+  assert.match(career, /<rect x="480" y="76" width="68" height="38"/u);
+  assert.match(career, /<rect x="372" y="132" width="68" height="38"/u);
+  assert.match(career, /<rect x="480" y="132" width="68" height="38"/u);
+
+  const eliza = await readFile(resolve(repositoryRoot, "assets", "eliza-card.svg"), "utf8");
+  const elizaPanelCenter = 354 + 212 / 2;
+  assert.equal((405 + 515) / 2, elizaPanelCenter);
+  const auditBars = [...eliza.matchAll(/<rect x="(\d+)" y="151" width="20" height="12"/gu)]
+    .map((match) => Number(match[1]));
+  assert.deepEqual(auditBars, [369, 396, 423, 450, 477, 504, 531]);
+  assert.equal(auditBars[3] + 10, elizaPanelCenter);
+});
+
 test("validates the checked-in profile without network access", async () => {
   const result = await validateProfile();
 
-  assert.ok(result.destinationCount >= 10);
+  assert.ok(result.destinationCount >= 12);
   assert.ok(result.localDestinationCount >= 7);
   assert.equal(result.svgCount, 7);
+});
+
+test("keeps release evidence explicit and the README mobile friendly", async () => {
+  const readme = await readFile(resolve(repositoryRoot, "README.md"), "utf8");
+
+  assert.match(readme, /CareerOS Local `v1\.5\.0`/u);
+  assert.match(readme, /on-device LLM is required/u);
+  assert.match(readme, /evidence matching fails closed/u);
+  assert.match(readme, /70 frozen inputs through 490 deterministic perturbations/u);
+  assert.match(readme, /ELIZA Lab `v1\.4\.0`/u);
+  assert.doesNotMatch(readme, /<table\b|<(?:video|source)\b/iu);
 });
 
 test("rejects an SVG asset that the profile does not use", async (context) => {
