@@ -567,6 +567,25 @@ export async function validateProfile(root = repositoryRoot) {
     assert.ok(readme.includes(section), `README.md is missing ${section}.`);
   }
 
+  const releaseEvidence = [
+    "CareerOS Local `v1.5.0`",
+    "on-device LLM is required for analysis and has no cloud fallback",
+    "deterministic, user-scoped agenda",
+    "evidence matching fails closed",
+    "https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.5.0",
+    "ELIZA Lab `v1.4.0`",
+    "seven deterministic transformations across 70 frozen inputs, evaluating 490 variants",
+    "synthetic and English-only",
+    "consistency does not prove correctness",
+    "https://github.com/ejupi-djenis30/PsychologistRustBot/releases/tag/v1.4.0",
+  ];
+  for (const evidence of releaseEvidence) {
+    assert.ok(readme.includes(evidence), `README.md is missing verified release evidence: ${evidence}`);
+  }
+
+  assert.doesNotMatch(readme, /<table\b/iu, "README.md must keep project content in a mobile-friendly single column.");
+  assert.doesNotMatch(readme, /<(?:video|source)\b/iu, "README.md must not embed demonstration videos.");
+
   const imageTags = [...readme.matchAll(/<img\b[^>]*>/giu)].map((match) => match[0]);
   assert.ok(imageTags.length >= 6, "README.md must retain the profile header and project cards.");
   for (const tag of imageTags) {
@@ -584,6 +603,7 @@ export async function validateProfile(root = repositoryRoot) {
       continue;
     }
 
+    assert.match(destination, /\.svg(?:[?#].*)?$/iu, `Local profile visuals must be code-native SVG assets: ${destination}`);
     referencedLocalFiles.add(await resolveExistingLocalDestination(canonicalRoot, destination));
     localDestinationCount += 1;
   }
@@ -597,7 +617,22 @@ export async function validateProfile(root = repositoryRoot) {
       referencedLocalFiles.has(await realpath(assetPath)),
       `assets/${name} is not referenced by README.md. Remove obsolete profile assets.`,
     );
-    validateSvg(await readFile(assetPath, "utf8"), `assets/${name}`);
+    const assetSource = await readFile(assetPath, "utf8");
+    validateSvg(assetSource, `assets/${name}`);
+    if (name === "eliza-card.svg") {
+      assert.ok(
+        assetSource.includes("seven deterministic transformations across 70 frozen inputs, evaluating 490 variants"),
+        "assets/eliza-card.svg must state the exact frozen-audit population.",
+      );
+      assert.ok(
+        assetSource.includes(">VARIANTS</text>"),
+        "assets/eliza-card.svg must label the 490 outputs as variants.",
+      );
+      assert.ok(
+        assetSource.includes(">7 CONTROLLED TRANSFORMS</text>"),
+        "assets/eliza-card.svg must retain the seven-transform visual key.",
+      );
+    }
   }
 
   return { destinationCount: destinations.length, localDestinationCount, svgCount: svgFiles.length };

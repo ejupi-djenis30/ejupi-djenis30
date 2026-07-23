@@ -16,46 +16,47 @@ I build software in Switzerland, usually where backend engineering, applied ML, 
 
 ### Systems you can run
 
-<table>
-  <tr>
-    <td width="50%">
-      <a href="https://ejupi-djenis30.github.io/careeros-local/"><img src="assets/careeros-card.svg" width="100%" alt="CareerOS Local project card" /></a>
-      <br /><sub>Verified career records, deterministic job search, application timelines and reproducible dossiers. Private career data stays local.</sub>
-    </td>
-    <td width="50%">
-      <a href="https://ejupi-djenis30.github.io/PsychologistRustBot/"><img src="assets/eliza-card.svg" width="100%" alt="ELIZA Lab project card" /></a>
-      <br /><sub>An open-set ML lab with isolated data splits, calibration, abstention and verifiable model artifacts.</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <a href="https://ejupi-djenis30.github.io/DjenisAiAgent/"><img src="assets/agent-card.svg" width="100%" alt="Djenis AI Agent project card" /></a>
-      <br /><sub>A permission-gated desktop agent whose actions remain visible and inspectable.</sub>
-    </td>
-    <td width="50%">
-      <a href="https://ejupi-djenis30.github.io/IntegraDraw/"><img src="assets/integra-card.svg" width="100%" alt="IntegraDraw project card" /></a>
-      <br /><sub>See numerical integration converge, rectangle by rectangle.</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <a href="https://ejupi-djenis30.github.io/Dig/"><img src="assets/dig-card.svg" width="100%" alt="DIG project card" /></a>
-      <br /><sub>A real Gopher client and an honest browser-based protocol explorer.</sub>
-    </td>
-    <td width="50%">
-      <a href="https://ejupi-djenis30.github.io/vector-placement-operations/"><img src="assets/vector-card.svg" width="100%" alt="VECTOR placement operations project card" /></a>
-      <br /><sub>A clear, local operations board for an entire placement cohort.</sub>
-    </td>
-  </tr>
-</table>
+<a href="https://ejupi-djenis30.github.io/careeros-local/"><img src="assets/careeros-card.svg" width="100%" alt="CareerOS Local: required on-device LLM, deterministic private agenda and fail-closed evidence" /></a>
 
-<table>
-  <tr>
-    <td width="33%"><strong>Useful first</strong><br /><sub>I start with the decision or task the software needs to improve.</sub></td>
-    <td width="33%"><strong>Evidence over claims</strong><br /><sub>Tests, fixtures, release artifacts and limitations stay visible in the repository.</sub></td>
-    <td width="33%"><strong>Built to run</strong><br /><sub>Deployment, recovery, privacy and maintenance are part of the design.</sub></td>
-  </tr>
-</table>
+**CareerOS Local `v1.5.0`** is a private desktop career utility. Its on-device LLM is required for analysis and has no cloud fallback. A deterministic, user-scoped agenda orders the next actions; evidence matching fails closed when the saved record cannot support a claim.
+
+[Open the product page](https://ejupi-djenis30.github.io/careeros-local/) · [Inspect the immutable v1.5.0 release](https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.5.0)
+
+<br />
+
+<a href="https://ejupi-djenis30.github.io/PsychologistRustBot/"><img src="assets/eliza-card.svg" width="100%" alt="ELIZA Lab: seven deterministic transformations across 70 frozen inputs, evaluating 490 variants, with published limitations" /></a>
+
+**ELIZA Lab `v1.4.0`** is an inspectable open-set ML experiment. Its post-training audit uses seven deterministic transformations across 70 frozen inputs, evaluating 490 variants. The report states its limits plainly: the prompts are synthetic and English-only, and consistency does not prove correctness.
+
+[Open the ML lab](https://ejupi-djenis30.github.io/PsychologistRustBot/) · [Inspect the immutable v1.4.0 release](https://github.com/ejupi-djenis30/PsychologistRustBot/releases/tag/v1.4.0)
+
+<br />
+
+<a href="https://ejupi-djenis30.github.io/DjenisAiAgent/"><img src="assets/agent-card.svg" width="100%" alt="Djenis AI Agent project card" /></a>
+
+A permission-gated desktop agent whose actions remain visible and inspectable.
+
+<br />
+
+<a href="https://ejupi-djenis30.github.io/IntegraDraw/"><img src="assets/integra-card.svg" width="100%" alt="IntegraDraw project card" /></a>
+
+See numerical integration converge, rectangle by rectangle.
+
+<br />
+
+<a href="https://ejupi-djenis30.github.io/Dig/"><img src="assets/dig-card.svg" width="100%" alt="DIG project card" /></a>
+
+A real Gopher client and an honest browser-based protocol explorer.
+
+<br />
+
+<a href="https://ejupi-djenis30.github.io/vector-placement-operations/"><img src="assets/vector-card.svg" width="100%" alt="VECTOR placement operations project card" /></a>
+
+A clear, local operations board for an entire placement cohort.
+
+- **Useful first.** I start with the decision or task the software needs to improve.
+- **Evidence over claims.** Tests, fixtures, release artifacts and limitations stay visible in the repository.
+- **Built to run.** Deployment, recovery, privacy and maintenance are part of the design.
 
 ### The toolkit
 

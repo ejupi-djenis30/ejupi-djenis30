@@ -1,30 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" role="img" aria-labelledby="title description">
-  <title id="title">CareerOS Local</title>
-  <desc id="description">A local-first career utility represented as verified records flowing into search, tasks and dossier outputs.</desc>
+  <title id="title">CareerOS Local v1.5.0</title>
+  <desc id="description">A private career utility with a required on-device language model, a deterministic daily agenda and evidence that fails closed.</desc>
   <rect width="600" height="230" rx="18" fill="#101713" />
-  <g opacity=".11" stroke="#b9fa7b">
+  <g opacity=".1" stroke="#b9fa7b">
     <path d="M0 46h600M0 92h600M0 138h600M0 184h600" />
     <path d="M60 0v230M120 0v230M180 0v230M240 0v230M300 0v230M360 0v230M420 0v230M480 0v230M540 0v230" />
   </g>
-  <text x="34" y="45" fill="#b9fa7b" font-family="monospace" font-size="14" letter-spacing="2">01 / LOCAL-FIRST UTILITY</text>
-  <text x="34" y="112" fill="#f5f5ed" font-family="Arial, sans-serif" font-size="42" font-weight="800">CareerOS Local</text>
-  <text x="34" y="154" fill="#aeb8b0" font-family="Arial, sans-serif" font-size="18">Records → applications.</text>
-  <g transform="translate(365 35)" font-family="monospace" font-size="9" text-anchor="middle">
-    <rect x="26" y="0" width="150" height="55" rx="8" fill="#17211b" stroke="#b9fa7b" />
-    <text x="101" y="23" fill="#b9fa7b" letter-spacing="1">VERIFIED RECORDS</text>
-    <text x="101" y="40" fill="#f5f5ed">LOCAL / REVISIONED</text>
-    <path d="M101 55v27M31 82h140" fill="none" stroke="#b9fa7b" />
-    <path d="M31 82v17M101 82v17M171 82v17" fill="none" stroke="#b9fa7b" />
-    <g transform="translate(0 99)">
-      <rect width="62" height="52" rx="7" fill="#b9fa7b" />
-      <rect x="70" width="62" height="52" rx="7" fill="#17211b" stroke="#b9fa7b" />
-      <rect x="140" width="62" height="52" rx="7" fill="#b9fa7b" />
-      <text x="31" y="24" fill="#101713">SEARCH</text>
-      <text x="31" y="37" fill="#101713">PLAN</text>
-      <text x="101" y="24" fill="#f5f5ed">TASKS</text>
-      <text x="101" y="37" fill="#f5f5ed">+ ICS</text>
-      <text x="171" y="24" fill="#101713">DOSSIER</text>
-      <text x="171" y="37" fill="#101713">ZIP</text>
-    </g>
-  </g>
+
+  <text x="34" y="40" fill="#b9fa7b" font-family="monospace" font-size="13" letter-spacing="2">01 / PRIVATE CAREER UTILITY</text>
+  <text x="34" y="94" fill="#f5f5ed" font-family="Arial, sans-serif" font-size="38" font-weight="800">CareerOS Local</text>
+  <text x="34" y="128" fill="#aeb8b0" font-family="monospace" font-size="12" letter-spacing="1">REQUIRED ON-DEVICE LLM</text>
+  <text x="34" y="151" fill="#aeb8b0" font-family="monospace" font-size="12" letter-spacing="1">DETERMINISTIC PRIVATE AGENDA</text>
+  <rect x="34" y="172" width="232" height="30" rx="6" fill="#b9fa7b" />
+  <text x="150" y="192" fill="#101713" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">EVIDENCE / FAIL CLOSED</text>
+
+  <rect x="354" y="38" width="212" height="164" rx="12" fill="#17211b" stroke="#b9fa7b" />
+  <text x="460" y="59" fill="#b9fa7b" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="1">LOCAL ANALYSIS LOOP</text>
+  <path d="M423 95h74M423 151h74M404 114v18M516 114v18" fill="none" stroke="#b9fa7b" stroke-width="2" />
+  <circle cx="460" cy="95" r="4" fill="#b9fa7b" />
+  <circle cx="460" cy="151" r="4" fill="#b9fa7b" />
+
+  <rect x="372" y="76" width="68" height="38" rx="6" fill="#b9fa7b" />
+  <rect x="480" y="76" width="68" height="38" rx="6" fill="#101713" stroke="#b9fa7b" />
+  <rect x="372" y="132" width="68" height="38" rx="6" fill="#101713" stroke="#b9fa7b" />
+  <rect x="480" y="132" width="68" height="38" rx="6" fill="#b9fa7b" />
+
+  <text x="406" y="99" fill="#101713" font-family="monospace" font-size="10" font-weight="700" text-anchor="middle">VAULT</text>
+  <text x="514" y="99" fill="#f5f5ed" font-family="monospace" font-size="10" font-weight="700" text-anchor="middle">LOCAL LLM</text>
+  <text x="406" y="155" fill="#f5f5ed" font-family="monospace" font-size="10" font-weight="700" text-anchor="middle">AGENDA</text>
+  <text x="514" y="155" fill="#101713" font-family="monospace" font-size="10" font-weight="700" text-anchor="middle">EVIDENCE</text>
+  <text x="460" y="188" fill="#aeb8b0" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="1">PRIVATE BY BOUNDARY</text>
 </svg>
