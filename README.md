@@ -24,9 +24,9 @@ I build software in Switzerland, usually where backend engineering, applied ML, 
 
 <br />
 
-<a href="https://ejupi-djenis30.github.io/PsychologistRustBot/"><img src="assets/eliza-card.svg" width="100%" alt="ELIZA Lab: 70 frozen inputs, 490 deterministic perturbations and published limitations" /></a>
+<a href="https://ejupi-djenis30.github.io/PsychologistRustBot/"><img src="assets/eliza-card.svg" width="100%" alt="ELIZA Lab: seven deterministic transformations across 70 frozen inputs, evaluating 490 variants, with published limitations" /></a>
 
-**ELIZA Lab `v1.4.0`** is an inspectable open-set ML experiment. Its post-training audit runs 70 frozen inputs through 490 deterministic perturbations. The report states its limits plainly: the prompts are synthetic and English-only, and consistency does not prove correctness.
+**ELIZA Lab `v1.4.0`** is an inspectable open-set ML experiment. Its post-training audit uses seven deterministic transformations across 70 frozen inputs, evaluating 490 variants. The report states its limits plainly: the prompts are synthetic and English-only, and consistency does not prove correctness.
 
 [Open the ML lab](https://ejupi-djenis30.github.io/PsychologistRustBot/) · [Inspect the immutable v1.4.0 release](https://github.com/ejupi-djenis30/PsychologistRustBot/releases/tag/v1.4.0)
 

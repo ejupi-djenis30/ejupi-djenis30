@@ -574,8 +574,7 @@ export async function validateProfile(root = repositoryRoot) {
     "evidence matching fails closed",
     "https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.5.0",
     "ELIZA Lab `v1.4.0`",
-    "70 frozen inputs",
-    "490 deterministic perturbations",
+    "seven deterministic transformations across 70 frozen inputs, evaluating 490 variants",
     "synthetic and English-only",
     "consistency does not prove correctness",
     "https://github.com/ejupi-djenis30/PsychologistRustBot/releases/tag/v1.4.0",
@@ -618,7 +617,22 @@ export async function validateProfile(root = repositoryRoot) {
       referencedLocalFiles.has(await realpath(assetPath)),
       `assets/${name} is not referenced by README.md. Remove obsolete profile assets.`,
     );
-    validateSvg(await readFile(assetPath, "utf8"), `assets/${name}`);
+    const assetSource = await readFile(assetPath, "utf8");
+    validateSvg(assetSource, `assets/${name}`);
+    if (name === "eliza-card.svg") {
+      assert.ok(
+        assetSource.includes("seven deterministic transformations across 70 frozen inputs, evaluating 490 variants"),
+        "assets/eliza-card.svg must state the exact frozen-audit population.",
+      );
+      assert.ok(
+        assetSource.includes(">VARIANTS</text>"),
+        "assets/eliza-card.svg must label the 490 outputs as variants.",
+      );
+      assert.ok(
+        assetSource.includes(">7 CONTROLLED TRANSFORMS</text>"),
+        "assets/eliza-card.svg must retain the seven-transform visual key.",
+      );
+    }
   }
 
   return { destinationCount: destinations.length, localDestinationCount, svgCount: svgFiles.length };

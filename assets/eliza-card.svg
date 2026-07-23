@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" role="img" aria-labelledby="title description">
   <title id="title">ELIZA Lab v1.4.0</title>
-  <desc id="description">An open-set machine learning lab with 70 frozen inputs, 490 deterministic perturbations and explicitly published limitations.</desc>
+  <desc id="description">An open-set machine learning lab using seven deterministic transformations across 70 frozen inputs, evaluating 490 variants, with explicitly published limitations.</desc>
   <rect width="600" height="230" rx="18" fill="#f4f1ea" />
   <g opacity=".08" stroke="#0e1111">
     <path d="M0 46h600M0 92h600M0 138h600M0 184h600" />
@@ -20,7 +20,7 @@
   <text x="405" y="111" fill="#0e1111" font-family="Arial, sans-serif" font-size="42" font-weight="800" text-anchor="middle">70</text>
   <text x="515" y="111" fill="#b44a2a" font-family="Arial, sans-serif" font-size="42" font-weight="800" text-anchor="middle">490</text>
   <text x="405" y="130" fill="#5a5d5a" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="1">INPUTS</text>
-  <text x="515" y="130" fill="#5a5d5a" font-family="monospace" font-size="8" text-anchor="middle" letter-spacing="1">PERTURBATIONS</text>
+  <text x="515" y="130" fill="#5a5d5a" font-family="monospace" font-size="8" text-anchor="middle" letter-spacing="1">VARIANTS</text>
 
   <rect x="369" y="151" width="20" height="12" rx="3" fill="#b44a2a" />
   <rect x="396" y="151" width="20" height="12" rx="3" fill="#0e1111" />

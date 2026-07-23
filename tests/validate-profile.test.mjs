@@ -235,6 +235,13 @@ test("keeps the CareerOS and ELIZA evidence diagrams centered and symmetric", as
     .map((match) => Number(match[1]));
   assert.deepEqual(auditBars, [369, 396, 423, 450, 477, 504, 531]);
   assert.equal(auditBars[3] + 10, elizaPanelCenter);
+  assert.match(
+    eliza,
+    /seven deterministic transformations across 70 frozen inputs, evaluating 490 variants/u,
+  );
+  assert.match(eliza, />VARIANTS<\/text>/u);
+  assert.match(eliza, />7 CONTROLLED TRANSFORMS<\/text>/u);
+  assert.doesNotMatch(eliza, />PERTURBATIONS<\/text>/u);
 });
 
 test("validates the checked-in profile without network access", async () => {
@@ -251,7 +258,10 @@ test("keeps release evidence explicit and the README mobile friendly", async () 
   assert.match(readme, /CareerOS Local `v1\.5\.0`/u);
   assert.match(readme, /on-device LLM is required/u);
   assert.match(readme, /evidence matching fails closed/u);
-  assert.match(readme, /70 frozen inputs through 490 deterministic perturbations/u);
+  assert.match(
+    readme,
+    /seven deterministic transformations across 70 frozen inputs, evaluating 490 variants/u,
+  );
   assert.match(readme, /ELIZA Lab `v1\.4\.0`/u);
   assert.doesNotMatch(readme, /<table\b|<(?:video|source)\b/iu);
 });
