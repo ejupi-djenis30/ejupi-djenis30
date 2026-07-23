@@ -34,25 +34,33 @@ I build software in Switzerland, usually where backend engineering, applied ML, 
 
 <a href="https://ejupi-djenis30.github.io/DjenisAiAgent/"><img src="assets/agent-card.svg" width="100%" alt="Djenis AI Agent project card" /></a>
 
-A permission-gated desktop agent whose actions remain visible and inspectable.
+**DjenisAiAgent `v0.2.2`** takes one observable action at a time. It separates `observe`, `interact` and `system` permissions, restricts paths, applications and commands with allowlists, and will not mark a task finished without a fresh observation.
+
+[Open the agent project](https://ejupi-djenis30.github.io/DjenisAiAgent/) · [Inspect the v0.2.2 release](https://github.com/ejupi-djenis30/DjenisAiAgent/releases/tag/v0.2.2)
 
 <br />
 
 <a href="https://ejupi-djenis30.github.io/IntegraDraw/"><img src="assets/integra-card.svg" width="100%" alt="IntegraDraw project card" /></a>
 
-See numerical integration converge, rectangle by rectangle.
+**IntegraDraw `v1.1.2`** compares midpoint and trapezoidal integration with a Simpson reference you can see. Its Java desktop app and TypeScript Canvas workbench consume the same golden numerical corpus, so a visual change cannot quietly change the maths.
+
+[Open the workbench](https://ejupi-djenis30.github.io/IntegraDraw/) · [Inspect the v1.1.2 release](https://github.com/ejupi-djenis30/IntegraDraw/releases/tag/v1.1.2)
 
 <br />
 
 <a href="https://ejupi-djenis30.github.io/Dig/"><img src="assets/dig-card.svg" width="100%" alt="DIG project card" /></a>
 
-A real Gopher client and an honest browser-based protocol explorer.
+**DIG `v2.1.4`** is a bounded Gopher client, not a protocol-themed mock-up. The CLI opens real `gopher://` addresses; the browser explorer uses a deterministic fixture because browsers cannot open raw TCP connections. Malformed protocol lines stay visible instead of being silently repaired.
+
+[Open the protocol explorer](https://ejupi-djenis30.github.io/Dig/) · [Inspect the v2.1.4 release](https://github.com/ejupi-djenis30/Dig/releases/tag/v2.1.4)
 
 <br />
 
 <a href="https://ejupi-djenis30.github.io/vector-placement-operations/"><img src="assets/vector-card.svg" width="100%" alt="VECTOR placement operations project card" /></a>
 
-A clear, local operations board for an entire placement cohort.
+**VECTOR `v2.0.1`** turns a fictional placement cohort into a local operations board. You can search, filter, review progress and advance milestones without sending records to a server. Its release gate compares independent Ubuntu and Windows builds before publishing.
+
+[Open the operations board](https://ejupi-djenis30.github.io/vector-placement-operations/) · [Inspect the v2.0.1 release](https://github.com/ejupi-djenis30/vector-placement-operations/releases/tag/v2.0.1)
 
 - **Useful first.** I start with the decision or task the software needs to improve.
 - **Evidence over claims.** Tests, fixtures, release artifacts and limitations stay visible in the repository.
