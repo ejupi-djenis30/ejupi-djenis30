@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" role="img" aria-labelledby="title description">
-  <title id="title">ELIZA Lab v1.4.0</title>
+  <title id="title">ELIZA Lab v1.5.0</title>
   <desc id="description">An open-set machine learning lab using seven deterministic transformations across 70 frozen inputs, evaluating 490 variants, with explicitly published limitations.</desc>
   <rect width="600" height="230" rx="18" fill="#f4f1ea" />
   <g opacity=".08" stroke="#0e1111">

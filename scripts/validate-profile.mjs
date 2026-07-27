@@ -563,21 +563,30 @@ export async function validateProfile(root = repositoryRoot) {
   const readmePath = resolve(canonicalRoot, "README.md");
   const readme = await readFile(readmePath, "utf8");
 
-  for (const section of ["### Systems you can run", "### The toolkit", "### Working notes"]) {
+  for (const section of [
+    "### Selected systems",
+    "### Engineering principles",
+    "### Toolkit",
+    "### Current focus",
+  ]) {
     assert.ok(readme.includes(section), `README.md is missing ${section}.`);
   }
 
   const releaseEvidence = [
-    "CareerOS Local `v1.5.0`",
-    "on-device LLM is required for analysis and has no cloud fallback",
-    "deterministic, user-scoped agenda",
-    "evidence matching fails closed",
-    "https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.5.0",
-    "ELIZA Lab `v1.4.0`",
-    "seven deterministic transformations across 70 frozen inputs, evaluating 490 variants",
+    "CareerOS Local `v1.8.0`",
+    "Career Vault preserves source facts and revision history",
+    "approved on-device model with no cloud fallback",
+    "https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.8.0",
+    "ELIZA Lab `v1.5.0`",
+    "seven controlled transformations to 70 ID-test inputs, producing 490 variants",
     "synthetic and English-only",
     "consistency does not prove correctness",
-    "https://github.com/ejupi-djenis30/PsychologistRustBot/releases/tag/v1.4.0",
+    "https://github.com/ejupi-djenis30/PsychologistRustBot/releases/tag/v1.5.0",
+    "DjenisAiAgent `v0.2.2`",
+    "DIG `v3.0.0`",
+    "VECTOR `v3.0.0`",
+    "**JDoor Assist**",
+    "No public release is claimed",
   ];
   for (const evidence of releaseEvidence) {
     assert.ok(readme.includes(evidence), `README.md is missing verified release evidence: ${evidence}`);
@@ -585,9 +594,22 @@ export async function validateProfile(root = repositoryRoot) {
 
   assert.doesNotMatch(readme, /<table\b/iu, "README.md must keep project content in a mobile-friendly single column.");
   assert.doesNotMatch(readme, /<(?:video|source)\b/iu, "README.md must not embed demonstration videos.");
+  assert.doesNotMatch(readme, /\bDjenis(?:\s+AI|AI)\b/u, "The product name must remain DjenisAiAgent.");
+  assert.ok(
+    readme.includes("born on 30 March 2003 in a small village in Macedonia")
+      && readme.includes("childhood and adolescence in Italy"),
+    "README.md must retain the factual personal-origin statement.",
+  );
+  for (const destination of [
+    "https://djenis.ejupilabs.com",
+    "https://ejupilabs.com",
+    "mailto:djenis.ejupi@ejupilabs.com",
+  ]) {
+    assert.ok(readme.includes(destination), `README.md is missing profile destination ${destination}.`);
+  }
 
   const imageTags = [...readme.matchAll(/<img\b[^>]*>/giu)].map((match) => match[0]);
-  assert.ok(imageTags.length >= 6, "README.md must retain the profile header and project cards.");
+  assert.ok(imageTags.length >= 8, "README.md must retain the profile header and all seven project cards.");
   for (const tag of imageTags) {
     assert.match(tag, /\balt=["'][^"']+["']/iu, `README image is missing useful alt text: ${tag}`);
   }
