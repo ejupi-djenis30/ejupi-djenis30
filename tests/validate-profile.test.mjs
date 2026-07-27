@@ -204,6 +204,7 @@ test("keeps every SVG text block inside its viewBox", async () => {
     "dig-card.svg",
     "eliza-card.svg",
     "integra-card.svg",
+    "jdoor-card.svg",
     "profile-header.svg",
     "vector-card.svg",
   ];
@@ -247,23 +248,48 @@ test("keeps the CareerOS and ELIZA evidence diagrams centered and symmetric", as
 test("validates the checked-in profile without network access", async () => {
   const result = await validateProfile();
 
-  assert.ok(result.destinationCount >= 12);
-  assert.ok(result.localDestinationCount >= 7);
-  assert.equal(result.svgCount, 7);
+  assert.ok(result.destinationCount >= 17);
+  assert.ok(result.localDestinationCount >= 8);
+  assert.equal(result.svgCount, 8);
 });
 
-test("keeps release evidence explicit and the README mobile friendly", async () => {
+test("keeps current release evidence explicit and the README mobile friendly", async () => {
   const readme = await readFile(resolve(repositoryRoot, "README.md"), "utf8");
 
-  assert.match(readme, /CareerOS Local `v1\.5\.0`/u);
-  assert.match(readme, /on-device LLM is required/u);
-  assert.match(readme, /evidence matching fails closed/u);
+  assert.match(readme, /CareerOS Local `v1\.8\.0`/u);
+  assert.match(readme, /Career Vault preserves source facts and revision history/u);
+  assert.match(readme, /approved on-device model with no cloud fallback/u);
   assert.match(
     readme,
-    /seven deterministic transformations across 70 frozen inputs, evaluating 490 variants/u,
+    /seven controlled transformations to 70 ID-test inputs, producing 490 variants/u,
   );
-  assert.match(readme, /ELIZA Lab `v1\.4\.0`/u);
+  assert.match(readme, /ELIZA Lab `v1\.5\.0`/u);
+  assert.match(readme, /DIG `v3\.0\.0`/u);
+  assert.match(readme, /VECTOR `v3\.0\.0`/u);
+  assert.match(readme, /\*\*JDoor Assist\*\*[\s\S]*No public release is claimed/u);
+  assert.doesNotMatch(readme, /\bDjenis(?:\s+AI|AI)\b/u);
   assert.doesNotMatch(readme, /<table\b|<(?:video|source)\b/iu);
+});
+
+test("keeps the canonical project order and factual profile links", async () => {
+  const readme = await readFile(resolve(repositoryRoot, "README.md"), "utf8");
+  const orderedProjects = [
+    "careeros-local/",
+    "PsychologistRustBot/",
+    "DjenisAiAgent/",
+    "Dig/",
+    "IntegraDraw/",
+    "vector-placement-operations/",
+    "jdoor/",
+  ];
+  const positions = orderedProjects.map((project) => readme.indexOf(project));
+
+  assert.ok(positions.every((position) => position >= 0));
+  assert.deepEqual(positions, [...positions].sort((left, right) => left - right));
+  assert.match(readme, /born on 30 March 2003 in a small village in Macedonia/u);
+  assert.match(readme, /most of my childhood and adolescence in Italy/u);
+  assert.match(readme, /href="https:\/\/djenis\.ejupilabs\.com"/u);
+  assert.match(readme, /mailto:djenis\.ejupi@ejupilabs\.com/u);
 });
 
 test("rejects an SVG asset that the profile does not use", async (context) => {
