@@ -67,11 +67,11 @@ I was born on 30 March 2003 in a small village in Macedonia and spent most of my
 
 <br />
 
-<a href="https://ejupi-djenis30.github.io/jdoor/"><img src="assets/jdoor-card.svg" width="100%" alt="JDoor Assist consent-based remote support project card" /></a>
+<a href="https://jdoor.ejupilabs.com/"><img src="assets/jdoor-card.svg" width="100%" alt="JDoor Assist consent-based remote support project card" /></a>
 
 **JDoor Assist** documents a consent-based modernization of a collaborative school project. The public tour makes approval, session limits, stop conditions and shared source history explicit. No public release is claimed while distribution remains in preparation.
 
-[Open the project tour](https://ejupi-djenis30.github.io/jdoor/) · [Inspect the shared source history](https://github.com/NobodyToListen/JDoor)
+[Visit the JDoor Assist website](https://jdoor.ejupilabs.com/) · [Read the engineering note](https://ejupi-djenis30.github.io/jdoor/) · [Inspect the shared source history](https://github.com/NobodyToListen/JDoor)
 
 ### Engineering principles
 
