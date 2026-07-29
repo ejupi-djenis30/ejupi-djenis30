@@ -581,12 +581,15 @@ export async function validateProfile(root = repositoryRoot) {
     "seven controlled transformations to 70 ID-test inputs, producing 490 variants",
     "synthetic and English-only",
     "consistency does not prove correctness",
-    "https://github.com/ejupi-djenis30/PsychologistRustBot/releases/tag/v1.5.0",
+    "https://ejupi-djenis30.github.io/eliza-lab/",
+    "https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.5.0",
     "DjenisAiAgent `v0.2.2`",
     "DIG `v3.0.0`",
     "VECTOR `v3.0.0`",
     "**JDoor Assist**",
     "No public release is claimed",
+    "https://ejupi-djenis30.github.io/JDoor/",
+    "https://github.com/ejupi-djenis30/JDoor",
   ];
   for (const evidence of releaseEvidence) {
     assert.ok(readme.includes(evidence), `README.md is missing verified release evidence: ${evidence}`);
