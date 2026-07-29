@@ -295,6 +295,10 @@ test("keeps current release evidence explicit and the README mobile friendly", a
     hasExactUrlDestination(destinations, "https://ejupi-djenis30.github.io/JDoor/"),
     true,
   );
+  assert.equal(
+    hasExactUrlDestination(destinations, "https://github.com/ejupi-djenis30/JDoor"),
+    true,
+  );
   const retiredOrigin = new URL("https://jdoor.ejupilabs.com/");
   assert.equal(
     destinations

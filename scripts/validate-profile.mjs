@@ -589,6 +589,7 @@ export async function validateProfile(root = repositoryRoot) {
     "**JDoor Assist**",
     "No public release is claimed",
     "https://ejupi-djenis30.github.io/JDoor/",
+    "https://github.com/ejupi-djenis30/JDoor",
   ];
   for (const evidence of releaseEvidence) {
     assert.ok(readme.includes(evidence), `README.md is missing verified release evidence: ${evidence}`);
