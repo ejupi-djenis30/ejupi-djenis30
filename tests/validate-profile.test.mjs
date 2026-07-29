@@ -20,6 +20,18 @@ function parseAttributes(tag) {
   );
 }
 
+function hasExactUrlDestination(destinations, expectedDestination) {
+  const expected = new URL(expectedDestination);
+  return destinations.some((destination) => {
+    if (!destination.startsWith("https://")) return false;
+    const candidate = new URL(destination);
+    return candidate.origin === expected.origin
+      && candidate.pathname === expected.pathname
+      && candidate.search === expected.search
+      && candidate.hash === expected.hash;
+  });
+}
+
 function assertTextFitsViewBox(source, label) {
   const viewBox = source.match(/<svg\b[^>]*\bviewBox="([^"]+)"/u)?.[1]
     .trim()
@@ -255,6 +267,7 @@ test("validates the checked-in profile without network access", async () => {
 
 test("keeps current release evidence explicit and the README mobile friendly", async () => {
   const readme = await readFile(resolve(repositoryRoot, "README.md"), "utf8");
+  const destinations = extractDestinations(readme);
 
   assert.match(readme, /CareerOS Local `v1\.8\.0`/u);
   assert.match(readme, /Career Vault preserves source facts and revision history/u);
@@ -264,16 +277,32 @@ test("keeps current release evidence explicit and the README mobile friendly", a
     /seven controlled transformations to 70 ID-test inputs, producing 490 variants/u,
   );
   assert.match(readme, /ELIZA Lab `v1\.5\.0`/u);
-  assert.ok(readme.includes("https://ejupi-djenis30.github.io/eliza-lab/"));
-  assert.ok(readme.includes("https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.5.0"));
+  assert.equal(
+    hasExactUrlDestination(destinations, "https://ejupi-djenis30.github.io/eliza-lab/"),
+    true,
+  );
+  assert.equal(
+    hasExactUrlDestination(
+      destinations,
+      "https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.5.0",
+    ),
+    true,
+  );
   assert.match(readme, /DIG `v3\.0\.0`/u);
   assert.match(readme, /VECTOR `v3\.0\.0`/u);
   assert.match(readme, /\*\*JDoor Assist\*\*[\s\S]*No public release is claimed/u);
-  assert.ok(readme.includes("https://ejupi-djenis30.github.io/JDoor/"));
-  const publicHostnames = extractDestinations(readme)
-    .filter((destination) => destination.startsWith("https://"))
-    .map((destination) => new URL(destination).hostname);
-  assert.equal(publicHostnames.includes("jdoor.ejupilabs.com"), false);
+  assert.equal(
+    hasExactUrlDestination(destinations, "https://ejupi-djenis30.github.io/JDoor/"),
+    true,
+  );
+  const retiredOrigin = new URL("https://jdoor.ejupilabs.com/");
+  assert.equal(
+    destinations
+      .filter((destination) => destination.startsWith("https://"))
+      .map((destination) => new URL(destination))
+      .some(({ origin }) => origin === retiredOrigin.origin),
+    false,
+  );
   assert.doesNotMatch(readme, /\bDjenis(?:\s+AI|AI)\b/u);
   assert.doesNotMatch(readme, /<table\b|<(?:video|source)\b/iu);
 });
