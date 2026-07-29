@@ -27,11 +27,11 @@ I was born on 30 March 2003 in a small village in Macedonia and spent most of my
 
 <br />
 
-<a href="https://ejupi-djenis30.github.io/PsychologistRustBot/"><img src="assets/eliza-card.svg" width="100%" alt="ELIZA Lab: seven deterministic transformations across 70 frozen inputs, evaluating 490 variants, with published limitations" /></a>
+<a href="https://ejupi-djenis30.github.io/eliza-lab/"><img src="assets/eliza-card.svg" width="100%" alt="ELIZA Lab: seven deterministic transformations across 70 frozen inputs, evaluating 490 variants, with published limitations" /></a>
 
 **ELIZA Lab `v1.5.0`** is an educational open-set ML pipeline and browser lab. Its frozen robustness audit applies seven controlled transformations to 70 ID-test inputs, producing 490 variants. The fixtures are synthetic and English-only, and consistency does not prove correctness.
 
-[Open the ML lab](https://ejupi-djenis30.github.io/PsychologistRustBot/) · [Review the v1.5.0 release](https://github.com/ejupi-djenis30/PsychologistRustBot/releases/tag/v1.5.0)
+[Open the ML lab](https://ejupi-djenis30.github.io/eliza-lab/) · [Review the v1.5.0 release](https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.5.0)
 
 <br />
 
@@ -67,11 +67,11 @@ I was born on 30 March 2003 in a small village in Macedonia and spent most of my
 
 <br />
 
-<a href="https://jdoor.ejupilabs.com/"><img src="assets/jdoor-card.svg" width="100%" alt="JDoor Assist consent-based remote support project card" /></a>
+<a href="https://ejupi-djenis30.github.io/JDoor/"><img src="assets/jdoor-card.svg" width="100%" alt="JDoor Assist consent-based remote support project card" /></a>
 
 **JDoor Assist** documents a consent-based modernization of a collaborative school project. The public tour makes approval, session limits, stop conditions and shared source history explicit. No public release is claimed while distribution remains in preparation.
 
-[Visit the JDoor Assist website](https://jdoor.ejupilabs.com/) · [Read the engineering note](https://ejupi-djenis30.github.io/jdoor/) · [Inspect the shared source history](https://github.com/NobodyToListen/JDoor)
+[Visit the JDoor Assist website](https://ejupi-djenis30.github.io/JDoor/) · [Read the engineering note](https://ejupi-djenis30.github.io/jdoor/) · [Inspect the shared source history](https://github.com/NobodyToListen/JDoor)
 
 ### Engineering principles
 
