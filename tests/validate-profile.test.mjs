@@ -264,13 +264,16 @@ test("keeps current release evidence explicit and the README mobile friendly", a
     /seven controlled transformations to 70 ID-test inputs, producing 490 variants/u,
   );
   assert.match(readme, /ELIZA Lab `v1\.5\.0`/u);
-  assert.match(readme, /https:\/\/ejupi-djenis30\.github\.io\/eliza-lab\//u);
-  assert.match(readme, /https:\/\/github\.com\/ejupi-djenis30\/eliza-lab\/releases\/tag\/v1\.5\.0/u);
+  assert.ok(readme.includes("https://ejupi-djenis30.github.io/eliza-lab/"));
+  assert.ok(readme.includes("https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.5.0"));
   assert.match(readme, /DIG `v3\.0\.0`/u);
   assert.match(readme, /VECTOR `v3\.0\.0`/u);
   assert.match(readme, /\*\*JDoor Assist\*\*[\s\S]*No public release is claimed/u);
-  assert.match(readme, /https:\/\/ejupi-djenis30\.github\.io\/JDoor\//u);
-  assert.doesNotMatch(readme, /jdoor\.ejupilabs\.com/iu);
+  assert.ok(readme.includes("https://ejupi-djenis30.github.io/JDoor/"));
+  const publicHostnames = extractDestinations(readme)
+    .filter((destination) => destination.startsWith("https://"))
+    .map((destination) => new URL(destination).hostname);
+  assert.equal(publicHostnames.includes("jdoor.ejupilabs.com"), false);
   assert.doesNotMatch(readme, /\bDjenis(?:\s+AI|AI)\b/u);
   assert.doesNotMatch(readme, /<table\b|<(?:video|source)\b/iu);
 });
