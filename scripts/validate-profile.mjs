@@ -557,6 +557,28 @@ function validateRemoteDestination(destination) {
   assert.ok(url.hostname, `External link is missing a hostname: ${destination}`);
 }
 
+export function validateRetiredJDoorDestinations(destinations) {
+  const retiredOrigin = new URL("https://jdoor.ejupilabs.com/");
+  const retiredSecondaryPage = new URL("https://ejupi-djenis30.github.io/jdoor/");
+  const remoteUrls = destinations
+    .filter((destination) => destination.startsWith("https://"))
+    .map((destination) => new URL(destination));
+
+  assert.equal(
+    remoteUrls.some(({ origin }) => origin === retiredOrigin.origin),
+    false,
+    `README.md must not link to the retired JDoor origin ${retiredOrigin.origin}.`,
+  );
+  assert.equal(
+    remoteUrls.some(
+      ({ origin, pathname }) => origin === retiredSecondaryPage.origin
+        && `${pathname.replace(/\/+$/u, "")}/` === retiredSecondaryPage.pathname,
+    ),
+    false,
+    `README.md must not link to the retired secondary JDoor Page ${retiredSecondaryPage.href}.`,
+  );
+}
+
 export async function validateProfile(root = repositoryRoot) {
   const canonicalRoot = await realpath(root);
   validateLicense(await readFile(resolve(canonicalRoot, "LICENSE"), "utf8"));
@@ -619,6 +641,7 @@ export async function validateProfile(root = repositoryRoot) {
 
   const destinations = extractDestinations(readme);
   assert.ok(destinations.length > 0, "README.md contains no links or images.");
+  validateRetiredJDoorDestinations(destinations);
   let localDestinationCount = 0;
   const referencedLocalFiles = new Set();
   for (const destination of destinations) {

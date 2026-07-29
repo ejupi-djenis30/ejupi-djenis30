@@ -71,7 +71,7 @@ I was born on 30 March 2003 in a small village in Macedonia and spent most of my
 
 **JDoor Assist** documents a consent-based modernization of a collaborative school project. The public tour makes approval, session limits, stop conditions and shared source history explicit. No public release is claimed while distribution remains in preparation.
 
-[Visit the JDoor Assist website](https://ejupi-djenis30.github.io/JDoor/) · [Read the engineering note](https://ejupi-djenis30.github.io/jdoor/) · [Inspect the shared source history](https://github.com/ejupi-djenis30/JDoor)
+[Visit the JDoor Assist website](https://ejupi-djenis30.github.io/JDoor/) · [Inspect the shared source history](https://github.com/ejupi-djenis30/JDoor)
 
 ### Engineering principles
 

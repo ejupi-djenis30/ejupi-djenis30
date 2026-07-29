@@ -11,6 +11,7 @@ import {
   resolveLocalDestination,
   validateLicense,
   validateProfile,
+  validateRetiredJDoorDestinations,
   validateSvg,
 } from "../scripts/validate-profile.mjs";
 
@@ -89,6 +90,21 @@ test("extracts Markdown and HTML destinations without duplicates", () => {
     "https://example.com",
     "assets/card.svg",
   ]);
+});
+
+test("rejects retired JDoor destinations", () => {
+  assert.doesNotThrow(() => validateRetiredJDoorDestinations([
+    "https://ejupi-djenis30.github.io/JDoor/",
+    "https://github.com/ejupi-djenis30/JDoor",
+  ]));
+  assert.throws(
+    () => validateRetiredJDoorDestinations(["https://jdoor.ejupilabs.com/"]),
+    /retired JDoor origin/u,
+  );
+  assert.throws(
+    () => validateRetiredJDoorDestinations(["https://ejupi-djenis30.github.io/jdoor/"]),
+    /retired secondary JDoor Page/u,
+  );
 });
 
 test("extracts angle-bracket, balanced and reference-style Markdown destinations", () => {
@@ -300,11 +316,20 @@ test("keeps current release evidence explicit and the README mobile friendly", a
     true,
   );
   const retiredOrigin = new URL("https://jdoor.ejupilabs.com/");
+  const retiredSecondaryPage = new URL("https://ejupi-djenis30.github.io/jdoor/");
   assert.equal(
     destinations
       .filter((destination) => destination.startsWith("https://"))
       .map((destination) => new URL(destination))
       .some(({ origin }) => origin === retiredOrigin.origin),
+    false,
+  );
+  assert.equal(
+    destinations
+      .filter((destination) => destination.startsWith("https://"))
+      .map((destination) => new URL(destination))
+      .some(({ origin, pathname }) => origin === retiredSecondaryPage.origin
+        && pathname === retiredSecondaryPage.pathname),
     false,
   );
   assert.doesNotMatch(readme, /\bDjenis(?:\s+AI|AI)\b/u);
@@ -320,7 +345,7 @@ test("keeps the canonical project order and factual profile links", async () => 
     "Dig/",
     "IntegraDraw/",
     "vector-placement-operations/",
-    "jdoor/",
+    "JDoor/",
   ];
   const positions = orderedProjects.map((project) => readme.indexOf(project));
 
