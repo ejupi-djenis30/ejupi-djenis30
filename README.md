@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://djenis.ejupilabs.com">
-    <img src="assets/profile-header.svg" width="100%" alt="Djenis Ejupi — product-minded software engineer and founder of Ejupi Labs in Switzerland" />
+    <img src="assets/profile-header.svg" width="100%" alt="Djenis Ejupi, software engineer and founder of Ejupi Labs in Switzerland" />
   </a>
 </p>
 
@@ -17,9 +17,9 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 <a href="https://ejupi-djenis30.github.io/careeros-local/"><img src="assets/careeros-card.svg" width="100%" alt="CareerOS Local: required on-device LLM, deterministic private agenda and fail-closed evidence" /></a>
 
-**CareerOS Local `v1.9.0`** is a local-first career utility that turns an existing CV into a traceable Career Vault, tailored application dossiers and a private job-search workflow. Its approved on-device model has no cloud fallback, while the read-only CLI and MCP server expose a bounded summary of the vault and application workflow without changing the underlying data.
+**CareerOS Local `v1.10.0`** turns an existing CV into a traceable Career Vault, tailored application dossiers and a private job-search workflow. Its approved on-device model has no cloud fallback. The read-only CLI and MCP server ship in an installable Python wheel, giving Codex, Claude Code and shell scripts seven scoped operations without allowing them to change the vault.
 
-[Open the product page](https://ejupi-djenis30.github.io/careeros-local/) · [Review the v1.9.0 release](https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.9.0)
+[Open the product page](https://ejupi-djenis30.github.io/careeros-local/) · [Review the v1.10.0 release](https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.10.0)
 
 <br />
 
