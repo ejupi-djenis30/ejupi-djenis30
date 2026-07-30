@@ -359,8 +359,33 @@ test("keeps the canonical project order and factual profile links", async () => 
   assert.deepEqual(positions, [...positions].sort((left, right) => left - right));
   assert.match(readme, /based in Switzerland[\s\S]*more than three years of hands-on work/u);
   assert.doesNotMatch(readme, /\b(?:Italy|Italia|Macedonia|born on|date of birth)\b/iu);
+  assert.doesNotMatch(
+    readme,
+    /Switzerland\s*·\s*English\s*\/\s*Italian\s*\/\s*Albanian/iu,
+  );
   assert.match(readme, /href="https:\/\/djenis\.ejupilabs\.com"/u);
   assert.match(readme, /mailto:djenis\.ejupi@ejupilabs\.com/u);
+});
+
+test("rejects future-looking sections and spoken-language claims", async (context) => {
+  for (const addition of [
+    "\n### What comes next\n\nMore experiments.\n",
+    "\nLanguages: English, Italian, Albanian\n",
+    '\n<p align="center"><sub>Switzerland · English / Italian / Albanian</sub></p>\n',
+  ]) {
+    const fixtureRoot = await mkdtemp(join(tmpdir(), "profile-identity-"));
+    context.after(() => rm(fixtureRoot, { force: true, recursive: true }));
+    await cp(join(repositoryRoot, "README.md"), join(fixtureRoot, "README.md"));
+    await cp(join(repositoryRoot, "LICENSE"), join(fixtureRoot, "LICENSE"));
+    await cp(join(repositoryRoot, "assets"), join(fixtureRoot, "assets"), { recursive: true });
+    const fixtureReadmePath = resolve(fixtureRoot, "README.md");
+    const fixtureReadme = await readFile(fixtureReadmePath, "utf8");
+    await writeFile(fixtureReadmePath, `${fixtureReadme}${addition}`);
+    await assert.rejects(
+      validateProfile(fixtureRoot),
+      /completed work instead of future-looking sections|must not publish spoken-language claims/u,
+    );
+  }
 });
 
 test("rejects an SVG asset that the profile does not use", async (context) => {
