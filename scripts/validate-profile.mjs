@@ -626,10 +626,15 @@ export async function validateProfile(root = repositoryRoot) {
   assert.doesNotMatch(readme, /<table\b/iu, "README.md must keep project content in a mobile-friendly single column.");
   assert.doesNotMatch(readme, /<(?:video|source)\b/iu, "README.md must not embed demonstration videos.");
   assert.doesNotMatch(readme, /\bDjenis(?:\s+AI|AI)\b/u, "The product name must remain DjenisAiAgent.");
-  assert.ok(
-    readme.includes("born on 30 March 2003 in a small village in Macedonia")
-      && readme.includes("childhood and adolescence in Italy"),
-    "README.md must retain the factual personal-origin statement.",
+  assert.match(
+    readme,
+    /based in Switzerland[\s\S]*more than three years of hands-on work/u,
+    "README.md must state the current Swiss base and hands-on experience.",
+  );
+  assert.doesNotMatch(
+    readme,
+    /\b(?:Italy|Italia|Macedonia|born on|date of birth)\b/iu,
+    "README.md must keep public geography limited to the current Swiss base.",
   );
   for (const destination of [
     "https://djenis.ejupilabs.com",
