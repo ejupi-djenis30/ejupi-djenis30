@@ -37,17 +37,17 @@ I was born on 30 March 2003 in a small village in Macedonia and spent most of my
 
 <a href="https://ejupi-djenis30.github.io/DjenisAiAgent/"><img src="assets/agent-card.svg" width="100%" alt="DjenisAiAgent project card" /></a>
 
-**DjenisAiAgent `v0.2.2`** takes one observable action at a time. It separates `observe`, `interact` and `system` permissions, restricts paths, applications and commands with allowlists, and requires a fresh observation before marking work complete.
+**DjenisAiAgent `v0.3.0`** takes one observable action at a time. It separates `observe`, `interact` and `system` permissions, restricts paths, applications and commands with allowlists, and requires a fresh observation before marking work complete.
 
-[Open the agent project](https://ejupi-djenis30.github.io/DjenisAiAgent/) · [Review the v0.2.2 release](https://github.com/ejupi-djenis30/DjenisAiAgent/releases/tag/v0.2.2)
+[Open the agent project](https://ejupi-djenis30.github.io/DjenisAiAgent/) · [Review the v0.3.0 release](https://github.com/ejupi-djenis30/DjenisAiAgent/releases/tag/v0.3.0)
 
 <br />
 
 <a href="https://ejupi-djenis30.github.io/Dig/"><img src="assets/dig-card.svg" width="100%" alt="DIG project card" /></a>
 
-**DIG `v3.0.0`** is a bounded Gopher client with a CLI, local web inspector and same-origin gateway. The command line opens real `gopher://` resources; the public page uses a committed fixture, while the local gateway gives the same interface bounded TCP access.
+**DIG `v3.2.0`** is a bounded Gopher client with a CLI, local web inspector and same-origin gateway. The command line opens real `gopher://` resources; the public page uses a committed fixture, while the local gateway gives the same interface bounded TCP access.
 
-[Open the protocol explorer](https://ejupi-djenis30.github.io/Dig/) · [Review the v3.0.0 release](https://github.com/ejupi-djenis30/Dig/releases/tag/v3.0.0)
+[Open the protocol explorer](https://ejupi-djenis30.github.io/Dig/) · [Review the v3.2.0 release](https://github.com/ejupi-djenis30/Dig/releases/tag/v3.2.0)
 
 <br />
 
@@ -61,9 +61,9 @@ I was born on 30 March 2003 in a small village in Macedonia and spent most of my
 
 <a href="https://ejupi-djenis30.github.io/vector-placement-operations/"><img src="assets/vector-card.svg" width="100%" alt="VECTOR placement operations project card" /></a>
 
-**VECTOR `v3.0.0`** is a self-hosted, multi-user placement operations platform. Scoped roles, persistent SQLite records, completion controls and append-only audit events keep one school’s workflow inspectable; release builds are compared across Ubuntu and Windows before publication.
+**VECTOR `v3.3.0`** is a self-hosted, multi-user placement operations platform. Scoped roles, persistent SQLite records, completion controls and append-only audit events keep one school’s workflow inspectable; release builds are compared across Ubuntu and Windows before publication.
 
-[Open the product tour](https://ejupi-djenis30.github.io/vector-placement-operations/) · [Review the v3.0.0 release](https://github.com/ejupi-djenis30/vector-placement-operations/releases/tag/v3.0.0)
+[Open the product tour](https://ejupi-djenis30.github.io/vector-placement-operations/) · [Review the v3.3.0 release](https://github.com/ejupi-djenis30/vector-placement-operations/releases/tag/v3.3.0)
 
 <br />
 

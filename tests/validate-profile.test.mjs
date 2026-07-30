@@ -13,6 +13,7 @@ import {
   validateProfile,
   validateRetiredJDoorDestinations,
   validateSvg,
+  verifiedReleases,
 } from "../scripts/validate-profile.mjs";
 
 function parseAttributes(tag) {
@@ -285,27 +286,31 @@ test("keeps current release evidence explicit and the README mobile friendly", a
   const readme = await readFile(resolve(repositoryRoot, "README.md"), "utf8");
   const destinations = extractDestinations(readme);
 
-  assert.match(readme, /CareerOS Local `v1\.8\.0`/u);
+  for (const { name, repository, version } of verifiedReleases) {
+    assert.ok(
+      readme.includes(`${name} \`${version}\``),
+      `README.md is missing the verified ${name} ${version} label.`,
+    );
+    assert.equal(
+      hasExactUrlDestination(
+        destinations,
+        `https://github.com/ejupi-djenis30/${repository}/releases/tag/${version}`,
+      ),
+      true,
+      `README.md is missing the verified ${name} ${version} release destination.`,
+    );
+  }
+
   assert.match(readme, /Career Vault preserves source facts and revision history/u);
   assert.match(readme, /approved on-device model with no cloud fallback/u);
   assert.match(
     readme,
     /seven controlled transformations to 70 ID-test inputs, producing 490 variants/u,
   );
-  assert.match(readme, /ELIZA Lab `v1\.5\.0`/u);
   assert.equal(
     hasExactUrlDestination(destinations, "https://ejupi-djenis30.github.io/eliza-lab/"),
     true,
   );
-  assert.equal(
-    hasExactUrlDestination(
-      destinations,
-      "https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.5.0",
-    ),
-    true,
-  );
-  assert.match(readme, /DIG `v3\.0\.0`/u);
-  assert.match(readme, /VECTOR `v3\.0\.0`/u);
   assert.match(readme, /\*\*JDoor Assist\*\*[\s\S]*No public release is claimed/u);
   assert.equal(
     hasExactUrlDestination(destinations, "https://ejupi-djenis30.github.io/JDoor/"),

@@ -8,6 +8,15 @@ import { fileURLToPath } from "node:url";
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 export const repositoryRoot = resolve(scriptDirectory, "..");
 
+export const verifiedReleases = Object.freeze([
+  { name: "CareerOS Local", repository: "careeros-local", version: "v1.8.0" },
+  { name: "ELIZA Lab", repository: "eliza-lab", version: "v1.5.0" },
+  { name: "DjenisAiAgent", repository: "DjenisAiAgent", version: "v0.3.0" },
+  { name: "DIG", repository: "Dig", version: "v3.2.0" },
+  { name: "IntegraDraw", repository: "IntegraDraw", version: "v1.1.2" },
+  { name: "VECTOR", repository: "vector-placement-operations", version: "v3.3.0" },
+].map(Object.freeze));
+
 const markdownEscapable = /[!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]/u;
 const safeSvgElements = new Set(["circle", "desc", "g", "path", "rect", "svg", "text", "title", "tspan"]);
 const safeSvgAttributes = new Set([
@@ -595,19 +604,16 @@ export async function validateProfile(root = repositoryRoot) {
   }
 
   const releaseEvidence = [
-    "CareerOS Local `v1.8.0`",
+    ...verifiedReleases.flatMap(({ name, repository, version }) => [
+      `${name} \`${version}\``,
+      `https://github.com/ejupi-djenis30/${repository}/releases/tag/${version}`,
+    ]),
     "Career Vault preserves source facts and revision history",
     "approved on-device model with no cloud fallback",
-    "https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.8.0",
-    "ELIZA Lab `v1.5.0`",
     "seven controlled transformations to 70 ID-test inputs, producing 490 variants",
     "synthetic and English-only",
     "consistency does not prove correctness",
     "https://ejupi-djenis30.github.io/eliza-lab/",
-    "https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.5.0",
-    "DjenisAiAgent `v0.2.2`",
-    "DIG `v3.0.0`",
-    "VECTOR `v3.0.0`",
     "**JDoor Assist**",
     "No public release is claimed",
     "https://ejupi-djenis30.github.io/JDoor/",
