@@ -356,8 +356,8 @@ test("keeps the canonical project order and factual profile links", async () => 
 
   assert.ok(positions.every((position) => position >= 0));
   assert.deepEqual(positions, [...positions].sort((left, right) => left - right));
-  assert.match(readme, /born on 30 March 2003 in a small village in Macedonia/u);
-  assert.match(readme, /most of my childhood and adolescence in Italy/u);
+  assert.match(readme, /based in Switzerland[\s\S]*more than three years of hands-on work/u);
+  assert.doesNotMatch(readme, /\b(?:Italy|Italia|Macedonia|born on|date of birth)\b/iu);
   assert.match(readme, /href="https:\/\/djenis\.ejupilabs\.com"/u);
   assert.match(readme, /mailto:djenis\.ejupi@ejupilabs\.com/u);
 });
