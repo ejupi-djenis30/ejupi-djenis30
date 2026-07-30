@@ -301,8 +301,9 @@ test("keeps current release evidence explicit and the README mobile friendly", a
     );
   }
 
-  assert.match(readme, /Career Vault preserves source facts and revision history/u);
-  assert.match(readme, /approved on-device model with no cloud fallback/u);
+  assert.match(readme, /turns an existing CV into a traceable Career Vault/u);
+  assert.match(readme, /approved on-device model has no cloud fallback/u);
+  assert.match(readme, /read-only CLI and MCP server/u);
   assert.match(
     readme,
     /seven controlled transformations to 70 ID-test inputs, producing 490 variants/u,

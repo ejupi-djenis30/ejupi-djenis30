@@ -19,9 +19,9 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 <a href="https://ejupi-djenis30.github.io/careeros-local/"><img src="assets/careeros-card.svg" width="100%" alt="CareerOS Local: required on-device LLM, deterministic private agenda and fail-closed evidence" /></a>
 
-**CareerOS Local `v1.8.0`** is a local-first career utility that turns verified experience into resumes, relevant opportunities and an application workflow. Its Career Vault preserves source facts and revision history; search analysis uses an approved on-device model with no cloud fallback.
+**CareerOS Local `v1.9.0`** is a local-first career utility that turns an existing CV into a traceable Career Vault, tailored application dossiers and a private job-search workflow. Its approved on-device model has no cloud fallback, while the read-only CLI and MCP server expose a bounded summary of the vault and application workflow without changing the underlying data.
 
-[Open the product page](https://ejupi-djenis30.github.io/careeros-local/) · [Review the v1.8.0 release](https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.8.0)
+[Open the product page](https://ejupi-djenis30.github.io/careeros-local/) · [Review the v1.9.0 release](https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.9.0)
 
 <br />
 
