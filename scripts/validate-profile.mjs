@@ -10,7 +10,7 @@ export const repositoryRoot = resolve(scriptDirectory, "..");
 
 export const verifiedReleases = Object.freeze([
   { name: "CareerOS Local", repository: "careeros-local", version: "v1.9.0" },
-  { name: "ELIZA Lab", repository: "eliza-lab", version: "v1.5.0" },
+  { name: "ELIZA Lab", repository: "eliza-lab", version: "v1.6.0" },
   { name: "DjenisAiAgent", repository: "DjenisAiAgent", version: "v0.3.0" },
   { name: "DIG", repository: "Dig", version: "v3.2.0" },
   { name: "IntegraDraw", repository: "IntegraDraw", version: "v1.1.2" },
@@ -598,10 +598,14 @@ export async function validateProfile(root = repositoryRoot) {
     "### Selected systems",
     "### Engineering principles",
     "### Toolkit",
-    "### Current focus",
   ]) {
     assert.ok(readme.includes(section), `README.md is missing ${section}.`);
   }
+  assert.doesNotMatch(
+    readme,
+    /^#{1,6}\s+(?:(?:current|present)\s+focus|next(?:\s+steps?)?|roadmap|what(?:(?:'s| is)\s+next|\s+comes\s+next)|future(?:\s+(?:work|plans?))?)\s*$/gimu,
+    "README.md must present completed work instead of future-looking sections.",
+  );
 
   const releaseEvidence = [
     ...verifiedReleases.flatMap(({ name, repository, version }) => [
@@ -636,6 +640,11 @@ export async function validateProfile(root = repositoryRoot) {
     readme,
     /\b(?:Italy|Italia|Macedonia|born on|date of birth)\b/iu,
     "README.md must keep public geography limited to the current Swiss base.",
+  );
+  assert.doesNotMatch(
+    readme,
+    /^(?:(?:<p[^>]*>)?<sub>)?\s*(?:(?:spoken|working)\s+)?languages?\s*[:/|·-].*$|^(?:<p[^>]*>)?<sub>[^<]*(?:English|Italian|Albanian)[^<]*(?:\/|·|\|)[^<]*(?:English|Italian|Albanian)[^<]*<\/sub>/gimu,
+    "README.md must not publish spoken-language claims.",
   );
   for (const destination of [
     "https://djenis.ejupilabs.com",
@@ -691,6 +700,15 @@ export async function validateProfile(root = repositoryRoot) {
       );
     }
     if (name === "eliza-card.svg") {
+      assert.ok(
+        assetSource.includes("<title id=\"title\">ELIZA Lab v1.6.0</title>"),
+        "assets/eliza-card.svg must identify the verified ELIZA Lab v1.6.0 release.",
+      );
+      assert.doesNotMatch(
+        assetSource,
+        /ELIZA Lab v1\.5\.0/u,
+        "assets/eliza-card.svg must not retain the previous release title.",
+      );
       assert.ok(
         assetSource.includes("seven deterministic transformations across 70 frozen inputs, evaluating 490 variants"),
         "assets/eliza-card.svg must state the exact frozen-audit population.",

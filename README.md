@@ -11,8 +11,6 @@
   <a href="mailto:djenis.ejupi@ejupilabs.com">Email</a>
 </p>
 
-<p align="center"><sub>Switzerland · English / Italian / Albanian</sub></p>
-
 I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In more than three years of hands-on work, I’ve built backend services, applied ML tools, automation and product interfaces. I care about the parts that decide whether software holds up in practice: permissions, failure modes and clear operations.
 
 ### Selected systems
@@ -27,9 +25,9 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 <a href="https://ejupi-djenis30.github.io/eliza-lab/"><img src="assets/eliza-card.svg" width="100%" alt="ELIZA Lab: seven deterministic transformations across 70 frozen inputs, evaluating 490 variants, with published limitations" /></a>
 
-**ELIZA Lab `v1.5.0`** is an educational open-set ML pipeline and browser lab. Its frozen robustness audit applies seven controlled transformations to 70 ID-test inputs, producing 490 variants. The fixtures are synthetic and English-only, and consistency does not prove correctness.
+**ELIZA Lab `v1.6.0`** is an educational open-set ML pipeline and browser lab. Its frozen robustness audit applies seven controlled transformations to 70 ID-test inputs, producing 490 variants. The fixtures are synthetic and English-only, and consistency does not prove correctness.
 
-[Open the ML lab](https://ejupi-djenis30.github.io/eliza-lab/) · [Review the v1.5.0 release](https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.5.0)
+[Open the ML lab](https://ejupi-djenis30.github.io/eliza-lab/) · [Review the v1.6.0 release](https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.6.0)
 
 <br />
 
@@ -82,10 +80,6 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 `Python` `Rust` `Java` `TypeScript` `React` `Node.js` `FastAPI` `Cloudflare` `Docker` `GitHub Actions`
 
 I choose tools after the constraint is clear. Sometimes that calls for a Rust core; sometimes plain JavaScript is the more responsible answer. The repository should make the trade-off easy to inspect.
-
-### Current focus
-
-I’m currently focused on local-first workflows and high-agency software that can abstain, fail closed or ask for permission before it acts.
 
 <p align="center">
   <a href="https://djenis.ejupilabs.com"><strong>Visit my personal portfolio →</strong></a> ·
