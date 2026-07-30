@@ -9,7 +9,7 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 export const repositoryRoot = resolve(scriptDirectory, "..");
 
 export const verifiedReleases = Object.freeze([
-  { name: "CareerOS Local", repository: "careeros-local", version: "v1.8.0" },
+  { name: "CareerOS Local", repository: "careeros-local", version: "v1.9.0" },
   { name: "ELIZA Lab", repository: "eliza-lab", version: "v1.5.0" },
   { name: "DjenisAiAgent", repository: "DjenisAiAgent", version: "v0.3.0" },
   { name: "DIG", repository: "Dig", version: "v3.2.0" },
@@ -608,8 +608,9 @@ export async function validateProfile(root = repositoryRoot) {
       `${name} \`${version}\``,
       `https://github.com/ejupi-djenis30/${repository}/releases/tag/${version}`,
     ]),
-    "Career Vault preserves source facts and revision history",
-    "approved on-device model with no cloud fallback",
+    "turns an existing CV into a traceable Career Vault",
+    "approved on-device model has no cloud fallback",
+    "read-only CLI and MCP server",
     "seven controlled transformations to 70 ID-test inputs, producing 490 variants",
     "synthetic and English-only",
     "consistency does not prove correctness",
