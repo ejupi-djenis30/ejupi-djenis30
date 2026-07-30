@@ -679,6 +679,17 @@ export async function validateProfile(root = repositoryRoot) {
     );
     const assetSource = await readFile(assetPath, "utf8");
     validateSvg(assetSource, `assets/${name}`);
+    if (name === "careeros-card.svg") {
+      assert.ok(
+        assetSource.includes("<title id=\"title\">CareerOS Local v1.9.0</title>"),
+        "assets/careeros-card.svg must identify the verified CareerOS Local v1.9.0 release.",
+      );
+      assert.doesNotMatch(
+        assetSource,
+        /CareerOS Local v1\.8\.0/u,
+        "assets/careeros-card.svg must not retain the previous release title.",
+      );
+    }
     if (name === "eliza-card.svg") {
       assert.ok(
         assetSource.includes("seven deterministic transformations across 70 frozen inputs, evaluating 490 variants"),
