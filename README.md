@@ -13,7 +13,7 @@
 
 <p align="center"><sub>Switzerland · English / Italian / Albanian</sub></p>
 
-I’m a software engineer and founder of Ejupi Labs, based in Switzerland. Over more than three years of hands-on work, I’ve built backend services, applied ML tools, automation and product interfaces. I care about the parts that decide whether software holds up in practice: permissions, failure modes and clear operations.
+I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In more than three years of hands-on work, I’ve built backend services, applied ML tools, automation and product interfaces. I care about the parts that decide whether software holds up in practice: permissions, failure modes and clear operations.
 
 ### Selected systems
 
