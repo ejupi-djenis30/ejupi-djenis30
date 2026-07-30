@@ -9,7 +9,7 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 export const repositoryRoot = resolve(scriptDirectory, "..");
 
 export const verifiedReleases = Object.freeze([
-  { name: "CareerOS Local", repository: "careeros-local", version: "v1.9.0" },
+  { name: "CareerOS Local", repository: "careeros-local", version: "v1.10.0" },
   { name: "ELIZA Lab", repository: "eliza-lab", version: "v1.6.0" },
   { name: "DjenisAiAgent", repository: "DjenisAiAgent", version: "v0.3.0" },
   { name: "DIG", repository: "Dig", version: "v3.2.0" },
@@ -615,6 +615,8 @@ export async function validateProfile(root = repositoryRoot) {
     "turns an existing CV into a traceable Career Vault",
     "approved on-device model has no cloud fallback",
     "read-only CLI and MCP server",
+    "installable Python wheel",
+    "seven scoped operations",
     "seven controlled transformations to 70 ID-test inputs, producing 490 variants",
     "synthetic and English-only",
     "consistency does not prove correctness",
@@ -690,12 +692,12 @@ export async function validateProfile(root = repositoryRoot) {
     validateSvg(assetSource, `assets/${name}`);
     if (name === "careeros-card.svg") {
       assert.ok(
-        assetSource.includes("<title id=\"title\">CareerOS Local v1.9.0</title>"),
-        "assets/careeros-card.svg must identify the verified CareerOS Local v1.9.0 release.",
+        assetSource.includes("<title id=\"title\">CareerOS Local v1.10.0</title>"),
+        "assets/careeros-card.svg must identify the verified CareerOS Local v1.10.0 release.",
       );
       assert.doesNotMatch(
         assetSource,
-        /CareerOS Local v1\.8\.0/u,
+        /CareerOS Local v1\.(?:8|9)\.0/u,
         "assets/careeros-card.svg must not retain the previous release title.",
       );
     }
