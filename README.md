@@ -19,7 +19,7 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 **CareerOS Local `v1.10.0`** turns an existing CV into a traceable Career Vault, tailored application dossiers and a private job-search workflow. Its approved on-device model has no cloud fallback. The read-only CLI and MCP server ship in an installable Python wheel, giving Codex, Claude Code and shell scripts seven scoped operations without allowing them to change the vault.
 
-[Open the product page](https://ejupi-djenis30.github.io/careeros-local/) · [Review the v1.10.0 release](https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.10.0)
+[Open the product page](https://ejupi-djenis30.github.io/careeros-local/) · [Review the v1.10.0 release](https://github.com/ejupi-djenis30/careeros-local/releases/tag/v1.10.0) · [Source](https://github.com/ejupi-djenis30/careeros-local) · [Automated checks](https://github.com/ejupi-djenis30/careeros-local/actions/workflows/ci.yml)
 
 <br />
 
@@ -27,7 +27,7 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 **ELIZA Lab `v1.6.0`** is an educational open-set ML pipeline and browser lab. Its frozen robustness audit applies seven controlled transformations to 70 ID-test inputs, producing 490 variants. The fixtures are synthetic and English-only, and consistency does not prove correctness.
 
-[Open the ML lab](https://ejupi-djenis30.github.io/eliza-lab/) · [Review the v1.6.0 release](https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.6.0)
+[Open the ML lab](https://ejupi-djenis30.github.io/eliza-lab/) · [Review the v1.6.0 release](https://github.com/ejupi-djenis30/eliza-lab/releases/tag/v1.6.0) · [Source](https://github.com/ejupi-djenis30/eliza-lab) · [Automated checks](https://github.com/ejupi-djenis30/eliza-lab/actions/workflows/ci.yml)
 
 <br />
 
@@ -35,7 +35,7 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 **DjenisAiAgent `v0.3.0`** takes one observable action at a time. It separates `observe`, `interact` and `system` permissions, restricts paths, applications and commands with allowlists, and requires a fresh observation before marking work complete.
 
-[Open the agent project](https://ejupi-djenis30.github.io/DjenisAiAgent/) · [Review the v0.3.0 release](https://github.com/ejupi-djenis30/DjenisAiAgent/releases/tag/v0.3.0)
+[Open the agent project](https://ejupi-djenis30.github.io/DjenisAiAgent/) · [Review the v0.3.0 release](https://github.com/ejupi-djenis30/DjenisAiAgent/releases/tag/v0.3.0) · [Source](https://github.com/ejupi-djenis30/DjenisAiAgent) · [Automated checks](https://github.com/ejupi-djenis30/DjenisAiAgent/actions/workflows/ci.yml)
 
 <br />
 
@@ -43,7 +43,7 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 **DIG `v3.2.0`** is a bounded Gopher client with a CLI, local web inspector and same-origin gateway. The command line opens real `gopher://` resources; the public page uses a committed fixture, while the local gateway gives the same interface bounded TCP access.
 
-[Open the protocol explorer](https://ejupi-djenis30.github.io/Dig/) · [Review the v3.2.0 release](https://github.com/ejupi-djenis30/Dig/releases/tag/v3.2.0)
+[Open the protocol explorer](https://ejupi-djenis30.github.io/Dig/) · [Review the v3.2.0 release](https://github.com/ejupi-djenis30/Dig/releases/tag/v3.2.0) · [Source](https://github.com/ejupi-djenis30/Dig) · [Automated checks](https://github.com/ejupi-djenis30/Dig/actions/workflows/ci.yml)
 
 <br />
 
@@ -51,7 +51,7 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 **IntegraDraw `v1.1.2`** compares midpoint and trapezoidal integration with a Simpson reference you can see. Its Java desktop app and TypeScript Canvas workbench consume the same golden numerical corpus, so a visual change cannot quietly change the maths.
 
-[Open the workbench](https://ejupi-djenis30.github.io/IntegraDraw/) · [Review the v1.1.2 release](https://github.com/ejupi-djenis30/IntegraDraw/releases/tag/v1.1.2)
+[Open the workbench](https://ejupi-djenis30.github.io/IntegraDraw/) · [Review the v1.1.2 release](https://github.com/ejupi-djenis30/IntegraDraw/releases/tag/v1.1.2) · [Source](https://github.com/ejupi-djenis30/IntegraDraw) · [Automated checks](https://github.com/ejupi-djenis30/IntegraDraw/actions/workflows/ci.yml)
 
 <br />
 
@@ -59,7 +59,7 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 **VECTOR `v3.3.0`** is a self-hosted, multi-user placement operations platform. Scoped roles, persistent SQLite records, completion controls and append-only audit events keep one school’s workflow inspectable; release builds are compared across Ubuntu and Windows before publication.
 
-[Open the product tour](https://ejupi-djenis30.github.io/vector-placement-operations/) · [Review the v3.3.0 release](https://github.com/ejupi-djenis30/vector-placement-operations/releases/tag/v3.3.0)
+[Open the product tour](https://ejupi-djenis30.github.io/vector-placement-operations/) · [Review the v3.3.0 release](https://github.com/ejupi-djenis30/vector-placement-operations/releases/tag/v3.3.0) · [Source](https://github.com/ejupi-djenis30/vector-placement-operations) · [Automated checks](https://github.com/ejupi-djenis30/vector-placement-operations/actions/workflows/ci.yml)
 
 <br />
 
@@ -67,9 +67,11 @@ I’m a software engineer and founder of Ejupi Labs, based in Switzerland. In mo
 
 **JDoor Assist** documents a consent-based modernization of a collaborative school project. The public tour makes approval, session limits, stop conditions and shared source history explicit. No public release is claimed while distribution remains in preparation.
 
-[Visit the JDoor Assist website](https://ejupi-djenis30.github.io/JDoor/) · [Inspect the shared source history](https://github.com/ejupi-djenis30/JDoor)
+[Visit the JDoor Assist website](https://ejupi-djenis30.github.io/JDoor/) · [Inspect the shared source history](https://github.com/ejupi-djenis30/JDoor) · [Automated checks](https://github.com/ejupi-djenis30/JDoor/actions/workflows/ci.yml)
 
 ### Engineering principles
+
+The source and automated-check links above make each project reviewable beyond its demo. Release links describe the published version; the source and CI history also include subsequent development. JDoor retains its shared-history attribution and unreleased status.
 
 - **Useful first.** I start with the decision or task the software needs to improve.
 - **Evidence over claims.** Tests, fixtures, release artifacts and limitations stay visible in the repository.
